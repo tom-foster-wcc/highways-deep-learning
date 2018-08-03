@@ -3,7 +3,14 @@
 
 ### Things to do
 
-* Split videos into frames (or do we want a 5D tensor?)
+* ~~Split videos into frames (or do we want a 5D tensor?)~~ 
+139.59GB on disk, 391,902 frames.
+
+* Read up on YOLO and ImageNet models so that I can use a pretrained convnet.
+
+* It might be necessary to run 100 objects to begin with and creating these things manually
+
+* Spend 30 minutes on looking for a front-end solution that could potentially help with classifying the training set more quickly.
 
 It makes sense to run just the frames so that I can classify the images.
 
