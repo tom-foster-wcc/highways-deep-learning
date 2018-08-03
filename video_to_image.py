@@ -8,7 +8,7 @@ import os
 # video_location = '../Documents/"SCANNER 2018 VIDEO"/"70093 WARWICKSHIRE"'
 
 # Playing video from file:
-cap = cv2.VideoCapture('A38_NB_YR2_R09_180519132259.avi')
+video = cv2.VideoCapture('A38_NB_YR2_R09_180519132259.avi')
 
 try:
     if not os.path.exists('data'):
@@ -20,7 +20,7 @@ currentFrame = 0
 frame_exists = True
 while(frame_exists):
     # Capture frame-by-frame
-    ret, frame = cap.read()
+    ret, frame = video.read()
     if ret == False:
         frame_exists = False
     # Saves image of the current frame in jpg file
@@ -32,5 +32,5 @@ while(frame_exists):
     
 
 # When everything done, release the capture
-cap.release()
+video.release()
 cv2.destroyAllWindows()
