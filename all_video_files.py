@@ -84,4 +84,3 @@ def video_to_images(video_path):
 # video_to_images('../SCANNER 2018 VIDEO/70093 WARWICKSHIRE/' + 'C166_NB_RAV_YR2_R07_180514152253.avi')
 for x in range(len(video_only)):
     video_to_images('../SCANNER 2018 VIDEO/70093 WARWICKSHIRE/' + video_only[x])
-#     print(video_only[x])
