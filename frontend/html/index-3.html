@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas {
+            /*  */
+            width: 1360;
+            height: 768;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        var can = document.getElementById('canvas');
+        if (can.getContext) {
+            ctx = can.getContext('2d');
+            can.width = 1360 / 2;
+            can.height = 768 / 2;
+            //Loading of the home test image - img1
+            var img1 = new Image();
+
+            //drawing of the test image - img1
+            img1.onload = function () {
+            //draw background image
+            ctx.drawImage(img1, 0, 0, 1368, 768);
+            // ctx.drawImage(img1, 0, 0, 100, img1.height / img1.width);
+
+            //draw a box over the top
+            // can.fillStyle = "rgba(200, 0, 0, 0.5)";
+            // can.fillRect(0, 0, 500, 500);
+
+        };
+
+        img1.src = '../images/A38_NB_YR2_R09_180519132259_frame_1.jpg';
+    }
+    </script>
+</body>
+</html>
