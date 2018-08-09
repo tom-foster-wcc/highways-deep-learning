@@ -10,7 +10,7 @@
 
 * It might be necessary to run 100 objects to begin with and creating these things manually
 
-* Spend 30 minutes on looking for a front-end solution that could potentially help with classifying the training set more quickly.
+* ~~Spend 30 minutes on looking for a front-end solution that could potentially help with classifying the training set more quickly.~~ Tool being used labelImg working, not hierarchical though currently.
 
 It makes sense to run just the frames so that I can classify the images.
 
@@ -25,6 +25,10 @@ Test set is dependent on the size of the examples as well. For instance 100 exam
 * Establish a single-number evaluation metric (for a classifier that might be it's accuracy)
 
 * Look at the images as where the signs are going to most likely feature in the image. (Are they likely to be on the left, and right more than centrally.
+
+## Questions for Liucija
+* Should the dataset contain the rear of signs, so it picks up the right one.
+
 
 ### Other areas of interest for the project.
 * White line degradation
