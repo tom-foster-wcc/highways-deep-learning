@@ -6,7 +6,11 @@
 * ~~Split videos into frames (or do we want a 5D tensor?)~~ 
 139.59GB on disk, 391,902 frames.
 
+By week 3 (16 August 2018) - have it so that I've done chapter 5 of the book and trained using ImageNet minimum.
+
 * Read up on YOLO and ImageNet models so that I can use a pretrained convnet.
+
+
 
 * It might be necessary to run 100 objects to begin with and creating these things manually
 
@@ -27,7 +31,7 @@ Test set is dependent on the size of the examples as well. For instance 100 exam
 * Look at the images as where the signs are going to most likely feature in the image. (Are they likely to be on the left, and right more than centrally.
 
 ## Questions for Liucija
-* Should the dataset contain the rear of signs, so it picks up the right one.
+* ~~Should the dataset contain the rear of signs, so it picks up the right one.~~ -- don't worry about it just yet!
 
 
 ### Other areas of interest for the project.
