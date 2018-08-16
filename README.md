@@ -9,7 +9,12 @@
 By week 3 (16 August 2018) - have it so that I've done chapter 5 of the book and trained using ImageNet minimum.
 
 * Read up on YOLO and ImageNet models so that I can use a pretrained convnet.
-
+* The purpose of this is to do object detection ran than image classification (therefore it is worth doing focusing on detecting objects.)
+* Look into caffe (pretrained models)
+* 10 training images could potentially be enough to do this.
+* 'Transfer learning' problem so retrain the last few layers of the model.
+* Yolo has the weights straight from them. (Possily yolo3)
+* Improve the bounding boxes so that they'll be better at predicting (possibly use the german taste set??)
 
 
 * It might be necessary to run 100 objects to begin with and creating these things manually
