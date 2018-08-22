@@ -7,6 +7,13 @@
 139.59GB on disk, 391,902 frames.
 
 By week 3 (16 August 2018) - have it so that I've done chapter 5 of the book and trained using ImageNet minimum.
+By week 4 (23 August 2018) - write an annotation file that can be read by the pretrained model. Currently convert pascal/voc to the format acceptable write small program to convert.
+
+* Images classified into 4 sign types currently
+    * speed sign
+    * stop sign
+    * no entry sign
+    * sharp deviation of route sign
 
 * Read up on YOLO and ImageNet models so that I can use a pretrained convnet.
 * The purpose of this is to do object detection ran than image classification (therefore it is worth doing focusing on detecting objects.)
@@ -14,7 +21,7 @@ By week 3 (16 August 2018) - have it so that I've done chapter 5 of the book and
 * 10 training images could potentially be enough to do this.
 * 'Transfer learning' problem so retrain the last few layers of the model.
 * Yolo has the weights straight from them. (Possily yolo3)
-* Improve the bounding boxes so that they'll be better at predicting (possibly use the german taste set??)
+* Improve the bounding boxes so that they'll be better at predicting (possibly use the german test set??)
 
 * Make use of the yolo, command to run
 python yolo_video.py --input="A38_NB_YR2_R09_180519132259.avi" --output='output'
