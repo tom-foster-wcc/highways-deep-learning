@@ -16,6 +16,10 @@ By week 3 (16 August 2018) - have it so that I've done chapter 5 of the book and
 * Yolo has the weights straight from them. (Possily yolo3)
 * Improve the bounding boxes so that they'll be better at predicting (possibly use the german taste set??)
 
+* Make use of the yolo, command to run
+python yolo_video.py --input="A38_NB_YR2_R09_180519132259.avi" --output='output'
+
+
 
 * It might be necessary to run 100 objects to begin with and creating these things manually
 
@@ -37,6 +41,16 @@ Test set is dependent on the size of the examples as well. For instance 100 exam
 
 ## Questions for Liucija
 * ~~Should the dataset contain the rear of signs, so it picks up the right one.~~ -- don't worry about it just yet!
+* If we were capturing all signs, should the first layers of the model be capturing shapes and train it for shapes?
+    * Triangle
+    * Square
+    * Circle
+    * Rectangle
+* Then train a new layer for 
+    * Informational?
+    * Warning signs etc
+* Maybe not for now but for different iteration.
+
 
 
 ### Other areas of interest for the project.
