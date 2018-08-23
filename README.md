@@ -8,6 +8,8 @@
 
 By week 3 (16 August 2018) - have it so that I've done chapter 5 of the book and trained using ImageNet minimum.
 By week 4 (23 August 2018) - write an annotation file that can be read by the pretrained model. Currently convert pascal/voc to the format acceptable write small program to convert.
+* Wrote a program to convert
+* Now add a classes txt and a anchors txt (what are anchors?)
 
 * Images classified into 4 sign types currently
     * speed sign
