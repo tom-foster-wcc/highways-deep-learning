@@ -1,7 +1,6 @@
-## Read in the pascal voc file and potentially alter to csv for this?
+## tf 22/08/18
+## Read in the pascal voc file and produce a file that 
 import os
-import pandas as pd
-import numpy as np
 import xml.etree.ElementTree as ET
 
 base_dir = '/Users/datascience4/Documents/training3'
@@ -14,6 +13,7 @@ items = []
 ##also create add a classes.txt file, which takes the object name and pushes it out
 ## create a file that creates a  tuple to enumerate the list
 classes = []
+count_classes = {}
 
 for i in range(len(xml_files)):
     xml = os.path.join(base_dir, xml_files[i])
@@ -29,17 +29,23 @@ for i in range(len(xml_files)):
     objects = ''
     for child in root.iter('object'):
         name = child.find('name').text
+        ## write classes out to a file as well
+        ## needed for yolo
         if not name in classes:
             classes += [name]
+            count_classes[name] = 0
         class_pos = classes.index(name)
+        count_classes[name] += 1
         print(classes)
+        print(count_classes)
         if child.find('bndbox'):
             bndbox = child.find('bndbox')
             xmin = bndbox.find('xmin').text
             ymin = bndbox.find('ymin').text
             xmax = bndbox.find('xmax').text
             ymax = bndbox.find('ymax').text
-            objects += str(xmin) + ',' + str(ymin) + ',' + str(xmax) + ',' + str(ymax) + ',' + str(class_pos)
+            objects += str(xmin) + ',' + str(ymin) + ',' + str(xmax) + ',' \
+                + str(ymax) + ',' + str(class_pos) + ' '
     print(objects)
     if bool(objects) == True:
         line = path + ' ' + objects + '\n'
@@ -47,6 +53,7 @@ for i in range(len(xml_files)):
     # print(items)
 
 print(classes)
+print(count_classes)
 
 write_lines = open(os.path.join(base_dir, 'train.txt'), 'w')
 for i in range(len(items)):
@@ -57,3 +64,8 @@ write_classes = open(os.path.join(base_dir, 'classes.txt'), 'w')
 for i in range(len(classes)):
     write_classes.write(classes[i] + '\n')
 write_classes.close()
+
+write_count_classes = open(os.path.join(base_dir, 'count_classes.txt'), 'w')
+for key, value in count_classes.items():
+    write_count_classes.write(key + ': ' + str(value) + '\n')
+write_count_classes.close()
