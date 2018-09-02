@@ -26,7 +26,7 @@ for i in range(len(xml_files)):
     ## so each object in an image is only seperated by a space
     path = root.find('path').text
     ## make it a string for ease
-    objects = ''
+    object_xml = ''
     for child in root.iter('object'):
         name = child.find('name').text
         ## write classes out to a file as well
@@ -44,13 +44,14 @@ for i in range(len(xml_files)):
             ymin = bndbox.find('ymin').text
             xmax = bndbox.find('xmax').text
             ymax = bndbox.find('ymax').text
-            objects += str(xmin) + ',' + str(ymin) + ',' + str(xmax) + ',' \
-                + str(ymax) + ',' + str(class_pos) + ' '
-    print(objects)
-    if bool(objects) == True:
-        line = path + ' ' + objects + '\n'
-        items.append(line)
-    # print(items)
+            # instead of instruction to write multiple objects on one line,
+            # as per original documentation separate out into one object per
+            # line.
+            object_xml = str(xmin) + ',' + str(ymin) + ',' + str(xmax) + ',' \
+                + str(ymax) + ',' + str(class_pos)
+            if bool(object_xml) == True:
+                line = path + ' ' + object_xml + '\n'
+                items.append(line)
 
 print(classes)
 print(count_classes)
